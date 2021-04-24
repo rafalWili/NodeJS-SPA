@@ -1,9 +1,11 @@
-const path = require('path')
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: {
-    main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/index.js']
+    main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/index.js','./src/sass/index.scss']
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -47,6 +49,29 @@ module.exports = {
         use: [ 'style-loader', 'css-loader' ]
       },
       {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '../src/css/style.css',
+            }
+          },
+          {
+            loader: 'extract-loader'
+          },
+          {
+            loader: 'css-loader?-url'
+          },
+          {
+            loader: 'postcss-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      },
+      {
        test: /\.(png|svg|jpg|gif)$/,
        use: ['file-loader']
       }
@@ -59,6 +84,10 @@ module.exports = {
       excludeChunks: [ 'server' ]
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+      // Define the filename pattern for CSS.
+      new MiniCssExtractPlugin({
+        filename: './src/style.css',
+      }),
   ]
 }
