@@ -30,6 +30,13 @@ class DetailsComponent extends Component {
     }
 
     render(){
+let options = [];
+let performance = this.props.item.value.Performance;
+
+performance.map( (value, index) => {
+    options.push([value.Date, value.Value] )
+})
+
         let details = this.props.item;
         return(
             <Card style={styles.card}  > 
@@ -44,7 +51,7 @@ class DetailsComponent extends Component {
                                 },
                                 series: [{
                                     type: 'line',
-                                data: [1, 2, 3]
+                                data: options
                                 }]
                             }}
                                             />
