@@ -4,22 +4,36 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "build": "del -rf dist && webpack --mode development",
-  "start": "node ./dist/server.js"
+    "buildDev": "del -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
+    "buildProd": "del -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
+    "start": "node ./dist/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eslint-plugin-react": "^7.23.2",
     "express": "^4.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.16",
     "@babel/preset-env": "^7.13.15",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.4",
+    "eslint": "^7.25.0",
+    "eslint-loader": "^4.0.2",
+    "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "style-loader": "^2.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^4.1.1",
     "webpack": "^5.35.1",
     "webpack-cli": "^4.6.0",
+    "webpack-dev-middleware": "^4.1.0",
+    "webpack-hot-middleware": "^2.25.0",
     "webpack-node-externals": "^3.0.0"
   }
 }
