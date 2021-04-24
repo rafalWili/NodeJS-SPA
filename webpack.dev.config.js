@@ -5,7 +5,7 @@ const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: {
-    main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/index.js','./src/sass/index.scss']
+    main: ['babel-polyfill','webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/index.js','./src/sass/index.scss']
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -89,5 +89,6 @@ module.exports = {
       new MiniCssExtractPlugin({
         filename: './src/style.css',
       }),
+      
   ]
 }

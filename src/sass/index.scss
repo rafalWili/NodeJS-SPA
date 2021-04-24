@@ -9,4 +9,28 @@ body,html{
 h1, h2, h3, h4, h5, p {
     color: #3e3e3e;
   }
+  .main_container{
+    position: relative;
+    width: 100vw !important;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
  
+#preloader{
+    position: relative !important;
+    display: block;
+    width: auto;
+    height: auto;
+    left: unset;
+    right: unset;
+    z-index: initial;
+    background: transparent;
+}
+
+.col-content{
+    transition: all 1s ease-in-out;
+}
+
+
