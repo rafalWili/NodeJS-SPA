@@ -34,7 +34,7 @@ let options = [];
 let performance = this.props.item.value.Performance;
 
 performance.map( (value, index) => {
-    options.push([value.Date, value.Value] )
+    options.push([ Date.UTC(value.Date.split('-')[0], 11, 1), value.Value] )
 })
 
         let details = this.props.item;
@@ -45,12 +45,14 @@ performance.map( (value, index) => {
 
                 <HighchartsReact
                     highcharts={Highcharts}
-                    options={{
+                    options={{  xAxis: {
+                                    type: 'datetime'
+                                },
                                 title: {
                                 text: 'My chart'
                                 },
                                 series: [{
-                                    type: 'line',
+                                    type: 'spline',
                                 data: options
                                 }]
                             }}
