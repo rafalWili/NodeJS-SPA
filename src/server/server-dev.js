@@ -21,354 +21,10 @@ app.get('/', (req, res, next) => {
   console.log('result  == ', result)
   res.set('content-type', 'text/html')
   res.send("HELLO")
-  res.end()
+
   next();
-  })
-})
-
-const data = [
-  {
-  "_id": "DK000000000",
-  "value": {
-  "Name": "ABC Invest - Fund 1",
-  "AllocationRegion": [
-  {
-  "Value": 50,
-  "Key": "Europe"
-  },
-  {
-  "Value": 20,
-  "Key": "North America"
-  },
-  {
-  "Value": 20,
-  "Key": "Asia"
-  },
-  {
-  "Value": 10,
-  "Key": "South America"
-  }
-  ],
-  "AllocationCountry": [
-  {
-  "Value": 20,
-  "Key": "Denmark"
-  },
-  {
-  "Value": 30,
-  "Key": "Ireland"
-  },
-  {
-  "Value": 10,
-  "Key": "USA"
-  },
-  {
-  "Value": 20,
-  "Key": "England"
-  },
-  {
-  "Value": 10,
-  "Key": "Germany"
-  },
-  {
-  "Value": 10,
-  "Key": "Other"
-  }
-  ],
-  "RiskLevel": 4,
-  "Category": "Mixed",
-  "Advisor": "ABC invest group",
-  "InvestmentFee": 1.22,
-  "Performance": [
-  {
-  "Value": 100,
-  "Date": "2012-12-10T00:00:00"
-  },
-  {
-  "Value": 101,
-  "Date": "2013-12-10T00:00:00"
-  },
-  {
-  "Value": 99,
-  "Date": "2014-12-10T00:00:00"
-  },
-  {
-  "Value": 110,
-  "Date": "2015-12-10T00:00:00"
-  },
-  {
-  "Value": 120,
-  "Date": "2016-12-10T00:00:00"
-  },
-  {
-  "Value": 105,
-  "Date": "2017-12-10T00:00:00"
-  },
-  {
-  "Value": 132,
-  "Date": "2018-12-10T00:00:00"
-  }
-  ]
-  }
-  },
-  {
-  "_id": "DK000000001",
-  "value": {
-  "Name": "ABC Invest - Fund 2",
-  "AllocationRegion": [
-  {
-  "Value": 20,
-  "Key": "Europe"
-  },
-  {
-  "Value": 50,
-  "Key": "North America"
-  },
-  {
-  "Value": 10,
-  "Key": "Asia"
-  },
-  {
-  "Value": 20,
-  "Key": "South America"
-  }
-  ],
-  "AllocationCountry": [
-  {
-  "Value": 40,
-  "Key": "Denmark"
-  },
-  {
-  "Value": 10,
-  "Key": "Ireland"
-  },
-  {
-  "Value": 20,
-  "Key": "USA"
-  },
-  {
-  "Value": 10,
-  "Key": "England"
-  },
-  {
-  "Value": 10,
-  "Key": "Germany"
-  },
-  {
-  "Value": 10,
-  "Key": "Other"
-  }
-  ],
-  "RiskLevel": 1,
-  "Category": "Mixed",
-  "Advisor": "ABC invest group",
-  "InvestmentFee": 1.22,
-  "Performance": [
-  {
-  "Value": 100,
-  "Date": "2012-12-10T00:00:00"
-  },
-  {
-  "Value": 101,
-  "Date": "2013-12-10T00:00:00"
-  },
-  {
-  "Value": 99,
-  "Date": "2014-12-10T00:00:00"
-  },
-  {
-  "Value": 110,
-  "Date": "2015-12-10T00:00:00"
-  },
-  {
-  "Value": 89,
-  "Date": "2016-12-10T00:00:00"
-  },
-  {
-  "Value": 145,
-  "Date": "2017-12-10T00:00:00"
-  },
-  {
-  "Value": 122,
-  "Date": "2018-12-10T00:00:00"
-  }
-  ]
-  }
-  },
-  {
-  "_id": "DK000000003",
-  "value": {
-  "Name": "ABC Invest - Fund 3",
-  "AllocationRegion": [
-  {
-  "Value": 20,
-  "Key": "Europe"
-  },
-  {
-  "Value": 50,
-  "Key": "North America"
-  },
-  {
-  "Value": 10,
-  "Key": "Asia"
-  },
-  {
-  "Value": 20,
-  "Key": "South America"
-  }
-  ],
-  "AllocationCountry": [
-  {
-  "Value": 40,
-  "Key": "Denmark"
-  },
-  {
-  "Value": 10,
-  "Key": "Ireland"
-  },
-  {
-  "Value": 20,
-  "Key": "USA"
-  },
-  {
-  "Value": 10,
-  "Key": "England"
-  },
-  {
-  "Value": 10,
-  "Key": "Germany"
-  },
-  {
-  "Value": 10,
-  "Key": "Other"
-  }
-  ],
-  "RiskLevel": 7,
-  "Category": "Mixed",
-  "Advisor": "ABC invest group",
-  "InvestmentFee": 1.22,
-  "Performance": [
-  {
-  "Value": 100,
-  "Date": "2012-12-10T00:00:00"
-  },
-  {
-  "Value": 101,
-  "Date": "2013-12-10T00:00:00"
-  },
-  {
-  "Value": 99,
-  "Date": "2014-12-10T00:00:00"
-  },
-  {
-  "Value": 110,
-  "Date": "2015-12-10T00:00:00"
-  },
-  {
-  "Value": 89,
-  "Date": "2016-12-10T00:00:00"
-  },
-  {
-  "Value": 145,
-  "Date": "2017-12-10T00:00:00"
-  },
-  {
-  "Value": 122,
-  "Date": "2018-12-10T00:00:00"
-  }
-  ]
-  }
-  },
-  {
-  "_id": "DK000000005",
-  "value": {
-  "Name": "ABC Invest - Fund 4",
-  "AllocationRegion": [
-  {
-  "Value": 50,
-  "Key": "Europe"
-  },
-  {
-  "Value": 20,
-  "Key": "North America"
-  },
-  {
-  "Value": 20,
-  "Key": "Asia"
-  },
-  {
-  "Value": 10,
-  "Key": "South America"
-  }
-  ],
-  "AllocationCountry": [
-  {
-  "Value": 20,
-  "Key": "Denmark"
-  },
-  {
-  "Value": 30,
-  "Key": "Ireland"
-  },
-  {
-  "Value": 10,
-  "Key": "USA"
-  },
-  {
-  "Value": 20,
-  "Key": "England"
-  },
-  {
-  "Value": 10,
-  "Key": "Germany"
-  },
-  {
-  "Value": 10,
-  "Key": "Other"
-  }
-  ],
-  "RiskLevel": 4,
-  "Category": "Mixed",
-  "Advisor": "ABC invest group",
-  "InvestmentFee": 1.22,
-  "Performance": [
-  {
-  "Value": 100,
-  "Date": "2012-12-10T00:00:00"
-  },
-  {
-  "Value": 101,
-  "Date": "2013-12-10T00:00:00"
-  },
-  {
-  "Value": 99,
-  "Date": "2014-12-10T00:00:00"
-  },
-  {
-  "Value": 110,
-  "Date": "2015-12-10T00:00:00"
-  },
-  {
-  "Value": 120,
-  "Date": "2016-12-10T00:00:00"
-  },
-  {
-  "Value": 105,
-  "Date": "2017-12-10T00:00:00"
-  },
-  {
-  "Value": 132,
-  "Date": "2018-12-10T00:00:00"
-  }
-  ]
-  }
-  }
-  ];
-
-
-app.get('/api', (req, res) => {
-  res.send(data);
   res.end()
+  })
 })
 
 
@@ -376,4 +32,48 @@ const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
     console.log(`App listening to ${PORT}....`)
     console.log('Press Ctrl+C to quit.')
-})
+});
+
+/** Mongo DB Access **/
+
+import {MongoClient} from 'mongodb';
+
+  const uri = "mongodb+srv://adminUser:adminUserPassword@cluster-node-express.pg4av.mongodb.net/test?retryWrites=true&w=majority";
+
+  const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+async function main(){
+
+  try {
+      // Connect to the MongoDB cluster
+      await client.connect();
+      const db = client.db('found')
+      const found = await  db.collection("foundData").find().toArray();
+
+      app.get('/api', (req, res) => {
+        res.send(found);
+        res.end()
+      })
+
+      // Make the appropriate DB calls
+      await  listDatabases(client);
+
+  } catch (e) {
+      console.error(e);
+  } finally {
+      await client.close();
+  }
+}
+
+
+
+ main().catch(console.error);
+
+ async function listDatabases(client){
+  let databasesList = await client.db().admin().listDatabases();
+
+  console.log("Databases:");
+  databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+}

@@ -5,6 +5,8 @@ import {Circle2} from 'react-preloaders2';
 import AppContext from './context';
 import FoudList from './FoundList'
 import DetailsComponent from './DetailsComponent';
+import AddFoundtoList from './AddFoundtoList';
+import AddFoundForm from './AddFoundForm';
 
 const style = {
     preloader : {   position: 'relative !important', display: 'block', width: 'auto', height: 'auto', left: 'unset', right: 'unset',  zIndex: 'initial', background: 'transparent' }
@@ -59,7 +61,9 @@ class App extends Component {
     
     render(){
         let content;
+        let addFound;
         this.state.dataFetched ? content = <FoudList data={this.state.data} /> : content = <Circle2 style={ style.preloader } />;
+        this.state.dataFetched ? addFound = <AddFoundtoList /> : null;
         let details;
         this.state.activeFound ? details = <DetailsComponent item={this.state.activeFound} />: null;
 
@@ -71,6 +75,9 @@ class App extends Component {
                         </div>
                     <div className="col-12 col-md-7 " >
                         {details} 
+                    </div>
+                    <div className="addFoundClass"> 
+                      {addFound}
                     </div>
                 </AppContext.Provider>        
             </div>  

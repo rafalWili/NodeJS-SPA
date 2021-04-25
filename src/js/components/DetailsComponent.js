@@ -98,27 +98,37 @@ AllocationCountry.map( (value, index) => {
                                         dataLabels: {
                                             enabled: false,
                                             format: '<b>{point.name}</b>: {point.percentage:.0f} %'
+                                          
                                         }
                                     }
                                    
                                 },
                                 legend: {
-                                    title: {
-                                        text: '<div style="float:right; width: 100%; text-align: right;" >Country<br/><span style="font-size: 9px; color: #666; font-weight: normal"></span></div>',
-                                        style: {
-                                            fontStyle: 'italic'
-                                        }
+                                        layout: 'vertical',
+                                        align: 'right',
+                                        verticalAlign: 'top',
+                                        y: 130,
+                                        navigation: {
+                                            activeColor: '#3E576F',
+                                            animation: true,
+                                            arrowSize: 12,
+                                            inactiveColor: '#CCC',
+                                            style: {
+                                                fontWeight: 'bold',
+                                                color: '#333',
+                                                fontSize: '12px'
+                                            },
+                                           
+                                        },
+                                         itemStyle : { 
+                                                fontSize: '18px'
+                                            }
                                     },
-                                    layout: 'vertical',
-                                    align: 'right',
-                                    verticalAlign: 'top',
-                                    x: -10,
-                                    y: 100
-                                },
                                 series: [{
                                     name: 'Country',
                                     colorByPoint: true,
                                     data: countries,
+                                    showInLegend: true
                                    
                                 }]
                             }}
