@@ -5,7 +5,7 @@ body,html{
     margin: 0;
     padding: 0;
     position: relative !important;
-    overflow: auto !important;
+   overflow:auto !important;
 }
 
 h1, h2, h3, h4, h5, p {
@@ -42,4 +42,29 @@ h1, h2, h3, h4, h5, p {
     border: 2px solid gray;
     padding: 20px;
     border-radius: 100px;
+    background: #fff;
+    z-index: 100;
+    &:hover{
+        cursor: pointer;
+    }
+
+}
+
+.addFoundFormClass{
+    position: fixed;
+    top: 0%;
+    height: 100vh;
+    width: 60vw;
+    background: #fff;
+    left: 0%;
+    border-right: 1px solid gray;
+    box-shadow: 4px 3px 10px 2px grey;
+    z-index: 10;
+    transform: translateX(-120%);
+    transition : transform 0.5s ease-in-out;
+
+}
+.formShow{
+transform: translateX(0%);
+transition : transform 0.5s ease-in-out;
 }

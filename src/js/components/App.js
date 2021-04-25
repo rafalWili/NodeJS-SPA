@@ -22,10 +22,12 @@ class App extends Component {
         this.state = {
             data : [],
             dataFetched : false,
-            activeFound  : null
+            activeFound  : null,
+            formVisible  : false
         } 
         this.getDataFromServer = this.getDataFromServer.bind(this);
         this.showDetailsHandler = this.showDetailsHandler.bind(this);
+        this.toggleFormHandler = this.toggleFormHandler.bind(this);
       
     }
 
@@ -58,18 +60,26 @@ class App extends Component {
            this.setState({ activeFound : activeFound})
 
         }
+
+        toggleFormHandler(){
+            this.setState(
+                prevState => ({
+                    formVisible: !prevState.formVisible
+                }))
+        }
     
     render(){
         let content;
         let addFound;
         this.state.dataFetched ? content = <FoudList data={this.state.data} /> : content = <Circle2 style={ style.preloader } />;
-        this.state.dataFetched ? addFound = <AddFoundtoList /> : null;
+        this.state.dataFetched ? addFound = <AddFoundtoList  showForm={this.toggleFormHandler} /> : null;
         let details;
         this.state.activeFound ? details = <DetailsComponent item={this.state.activeFound} />: null;
 
         return(
-            <div className="w-100 d-flex justify-content-around align-items-center" >
-                <AppContext.Provider value = {{ showDetails : this.showDetailsHandler }}>
+            <AppContext.Provider value = {{ showDetails : this.showDetailsHandler }}>
+
+            <div className="w-100 d-flex justify-content-around align-items-center mt-5 pt-5" >
                     <div className="col-12 col-md-5 col-content" >
                         {content} 
                         </div>
@@ -79,8 +89,11 @@ class App extends Component {
                     <div className="addFoundClass"> 
                       {addFound}
                     </div>
-                </AppContext.Provider>        
             </div>  
+            <AddFoundForm visible={this.state.formVisible}/>
+
+            </AppContext.Provider>        
+
         );
     }
 }

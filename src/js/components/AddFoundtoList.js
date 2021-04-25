@@ -11,7 +11,7 @@ class AddFoundtoList  extends Component {
 
         render(){
             return(
-                <div >
+                <div onClick={this.props.showForm } >
                         Add
                 </div>
 
